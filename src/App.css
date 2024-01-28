@@ -1,0 +1,138 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #000;
+  padding: 8px 20px;
+  align-items: center;
+}
+header .center nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+nav ul li {
+  font-family: "poppins", sans-serif;
+  color: #fff;
+  cursor: pointer;
+}
+nav ul li:hover {
+  color: rgb(60, 60, 148);
+}
+nav ul li::after {
+  border-bottom: 1px solid rgb(60, 60, 148);
+}
+nav ul li:hover::after {
+  content: "";
+  display: flex;
+  width: 100%;
+  height: 2px;
+  transition: border-bottom 0.3s ease;
+}
+.mobile-menu {
+  display: none;
+  cursor: pointer;
+}
+.center.open {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 70%;
+  height: 100%;
+  background-color: #000;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateX(0);
+}
+.center.open ul {
+  flex-direction: column;
+}
+.center.open li {
+  padding: 10px;
+}
+#faq {
+  padding-inline: 8vw;
+}
+#faq .faq-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+#faq .title-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 8px;
+  background-color: black;
+  color: #fff;
+  font-family: "poppins", sans-serif;
+  border-radius: 5px 5px 0 0;
+}
+#faq .title-container button {
+  background-color: rgb(240, 240, 245);
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  border: none;
+}
+#faq h1 {
+  text-align: center;
+  font-size: 35px;
+  font-family: "poppins", sans-serif;
+}
+#faq .faq-desc p {
+  font-size: 16px;
+  font-family: "poppins", sans-serif;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+@keyframes slideIn {
+  0% {
+    height: 0px;
+  }
+
+  100% {
+    height: 60px;
+  }
+}
+@keyframes slideOut {
+  0% {
+    height: 60px;
+  }
+  100% {
+    height: 0px;
+  }
+}
+.faq-desc {
+  border-bottom: 1px solid #000;
+  height: 0px;
+  animation: slideOut 0.5s ease-out;
+  overflow: hidden;
+}
+#faq .faq-desc.faq-active {
+  animation: slideIn 0.5s ease-in;
+  height: 60px;
+}
+@media only screen and (max-width: 768px) {
+  .mobile-menu {
+    display: block;
+  }
+  header .center {
+    display: none;
+  }
+  .left img {
+    width: 50px;
+  }
+  .right {
+    display: none;
+  }
+  #faq .faq-desc.faq-active {
+    height: auto;
+  }
+}
